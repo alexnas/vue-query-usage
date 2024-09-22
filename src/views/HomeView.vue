@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <main>
+  <div class="container">
     <h1>This is an home page</h1>
-  </main>
+  </div>
 </template>

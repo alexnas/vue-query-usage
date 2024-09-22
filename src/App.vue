@@ -1,7 +1,11 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { RouterView } from 'vue-router'
+</script>
 
 <template>
-  <div>
-    <h1 class="text-2xl font-bold text-teal-600">Hello Proper UseQuery Usage</h1>
-  </div>
+  <component :is="$route.meta.layout || 'div'">
+    <router-view />
+  </component>
 </template>
+
+<style scoped></style>
