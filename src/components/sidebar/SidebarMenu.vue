@@ -5,9 +5,9 @@ import SidebarLinkItem from '@/components/sidebar/SidebarLinkItem.vue'
 
 let boardsMenu: ISideMenuItem[] = reactive([
   {
-    name: 'Link1',
-    label: 'Link1',
-    path: '/link1',
+    name: 'Products',
+    label: 'Products',
+    path: '/products',
     icon: 'bi:app'
   },
   {
