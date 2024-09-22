@@ -1,7 +1,10 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import MainViewContainer from '@/views/MainViewContainer.vue'
+const pageTitle = 'Home Page'
+</script>
 
 <template>
-  <div class="container">
+  <main-view-container :pageTitle="pageTitle">
     <h1>This is an home page</h1>
-  </div>
+  </main-view-container>
 </template>

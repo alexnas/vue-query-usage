@@ -13,7 +13,7 @@ const routes: Array<RouteRecordRaw> = [
     path: '/about',
     name: 'About',
     component: () => import('@/views/AboutView.vue'),
-    meta: { layout: NoSidebarLayout }
+    meta: { layout: DefaultLayout }
   },
 
   {
