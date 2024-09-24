@@ -13,6 +13,8 @@ defineProps({
   }
 })
 
+const emit = defineEmits(['select'])
+
 const productTableCols: IProducTableCol[] = [
   { field: 'id', title: 'Id' },
   { field: 'title', title: 'Title' },
@@ -22,6 +24,10 @@ const productTableCols: IProducTableCol[] = [
   { field: 'rating', title: 'Rating' },
   { field: 'brand', title: 'Brand' }
 ]
+
+const onSelect = (product: IProduct) => {
+  emit('select', product)
+}
 </script>
 
 <template>
@@ -83,6 +89,7 @@ const productTableCols: IProducTableCol[] = [
         <tr
           v-for="product in products"
           :key="product.id"
+          @click="onSelect(product)"
           class="border-b bg-white hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-600"
         >
           <td class="px-6 py-4">
