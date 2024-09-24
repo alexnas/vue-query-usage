@@ -28,12 +28,14 @@ const selectedProduct: Ref<IProduct | null> = ref(null)
 const onSelect = (product: IProduct) => {
   selectedProduct.value = product
   isModalActive.value = true
+  console.log('onSelect', isModalActive.value, selectedProduct.value.id)
 }
 </script>
 
 <template>
   <main-view-container :pageTitle="pageTitle">
-    <ProductCard v-if="selectedProduct && isModalActive" :product="selectedProduct" />
+    <ProductCard v-if="selectedProduct && isModalActive" :productId="selectedProduct.id" />
+
     <PreLoader v-if="isLoading" />
     <ShowError v-else-if="isError" />
 

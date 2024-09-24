@@ -1,22 +1,32 @@
 <script lang="ts" setup>
-import type { PropType } from 'vue'
-import type { IProduct } from '@/types'
+import { useQuery } from '@tanstack/vue-query'
 import BaseModal from '@/components/modal/BaseModal.vue'
+import PreLoader from '@/components/PreLoader.vue'
 
-defineProps({
-  product: {
-    type: Object as PropType<IProduct | null>,
-    default: null
-  },
-  title: {
-    type: String
+const props = defineProps({
+  productId: {
+    type: Number || String,
+    required: true
   }
+})
+
+console.log('first', props.productId)
+
+async function fetchProduct() {
+  return await fetch(`https://dummyjson.com/products/${props.productId}`).then((res) => res.json())
+}
+
+const { data: product, isLoading } = useQuery({
+  queryKey: ['product', props.productId],
+  queryFn: fetchProduct
 })
 </script>
 
 <template>
   <base-modal :modalTitle="product?.title">
-    <div class="max-h-screen" v-if="product">
+    <PreLoader class="max-h-screen" v-if="isLoading" />
+
+    <div class="max-h-screen" v-else-if="product">
       <img class="max-h-60" :src="product?.images[0]" alt="" />
 
       <div>
