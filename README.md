@@ -1,6 +1,6 @@
 # VueQuery Usage
 
-This template should help get you started developing with Vue 3 in Vite.
+This is an example of VueQuery lib usage to fetch data from server in Vue3 applications.
 
 ## Used technologies
 
