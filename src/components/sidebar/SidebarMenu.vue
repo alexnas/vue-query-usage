@@ -9,22 +9,10 @@ let boardsMenu: ISideMenuItem[] = reactive([
     label: 'Products',
     path: '/products',
     icon: 'bi:app'
-  },
-  {
-    name: 'Link2',
-    label: 'Link2',
-    path: '/link2',
-    icon: 'bi:app'
   }
 ])
 
 let generalMenu: ISideMenuItem[] = reactive([
-  {
-    name: 'Settings',
-    label: 'Settings',
-    path: '/settings',
-    icon: 'material-symbols-light:settings-outline'
-  },
   {
     name: 'Home',
     label: 'Home',

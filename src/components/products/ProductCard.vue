@@ -10,8 +10,6 @@ const props = defineProps({
   }
 })
 
-console.log('first', props.productId)
-
 async function fetchProduct() {
   return await fetch(`https://dummyjson.com/products/${props.productId}`).then((res) => res.json())
 }
