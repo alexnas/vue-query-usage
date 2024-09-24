@@ -28,7 +28,6 @@ const selectedProduct: Ref<IProduct | null> = ref(null)
 const onSelect = (product: IProduct) => {
   selectedProduct.value = product
   isModalActive.value = true
-  console.log('onSelect', isModalActive.value, selectedProduct.value.id)
 }
 </script>
 
